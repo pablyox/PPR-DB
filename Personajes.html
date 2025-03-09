@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Dragon Ball</title>
+    <link rel="icon" href="Imagenes/icono.ico">
+    <link rel="stylesheet" href="CSS1.css">
+</head>
+
+<body>
+    <a href="Principal.html" class="volver-inicio">Volver al Inicio</a>
+
+    <div class="titulo">
+        PERSONAJES DE DRAGON BALL
+    </div><br><br>
+
+    <div id="personajes" class="personajes-container">
+        <!-- Los personajes se cargarán aquí -->
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const contenedor = document.getElementById("personajes");
+    let pagina = 1; // Página inicial
+
+    function obtenerPersonajes() {
+        fetch(`https://dragonball-api.com/api/characters?page=${pagina}`) // Hacemos la petición con el parámetro de página
+            .then(response => response.json()) // Convertimos la respuesta a JSON
+            .then(data => {
+                data.items.forEach(personaje => {
+                    // Creamos el bloque de cada personaje
+                    const card = document.createElement("div");
+                    card.classList.add("personaje");
+
+                    card.innerHTML = `
+                        <img class="imagen-personaje" src="${personaje.image}" alt="${personaje.name}">
+                        <h3>${personaje.name}</h3>
+                        <p>${personaje.race} - ${personaje.gender}</p>
+                        <p>Rol: ${personaje.affiliation}</p>
+                    `;
+
+                    contenedor.appendChild(card);
+                });
+                pagina++; // Aumentamos el número de página para obtener más personajes
+                if (data.items.length > 0) {
+                    obtenerPersonajes(); // Si la API devuelve más personajes, hacemos otra solicitud
+                }
+            })
+            .catch(error => console.error("Error al cargar personajes:", error));
+    }
+
+    obtenerPersonajes(); // Llamada inicial para cargar los personajes
+});
+
+</script>
+
+</html>

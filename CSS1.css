@@ -1,0 +1,303 @@
+@font-face {
+    font-family: "Titulo";
+    src: url("Fuentes/Titulo/Saiyan-Sans\ Right\ Oblique.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Texto";
+    src: url("Fuentes/Texto/ACMESecretAgentBB_BoldItal.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to bottom, 
+        #007bff 0%,    /* Azul */
+        #3399ff 20%,   /* Azul más suave */
+        #66ccff 35%,   /* Azul claro */
+        #ffb84d 45%,   /* Naranja suave */
+        #ff8c00 75%    /* Naranja */
+    );
+}
+
+.titulo{
+    font-family: "Titulo";
+    color: #ff8c00;
+    -webkit-text-stroke: 2px #000;
+    font-size: 80px;
+    margin-top: 10px;
+}
+
+.titulo img {
+    width: 800px;
+    height: 250px;
+    margin-top: 20px;
+}
+
+.perOtemp{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.verPersonajes, .verTemporadas {
+    text-align: center;
+    background-color: rgba(255, 140, 0, 0.9);
+    padding: 20px;
+    border-radius: 15px; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.verPersonajes:hover img, .verTemporadas:hover img{
+    transform: scale(1.15); 
+    transition: transform 0.4s;
+}
+
+
+.verPersonajes img, .verTemporadas img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+button {
+    font-family: "Titulo", Arial, sans-serif;
+    background-color: black;
+    color: #FBE32C;
+    border: 2px solid white;
+    border-color: red;
+    padding: 10px 20px;
+    font-size: 30px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.infoDragonBall {
+    text-align: center;
+    background: linear-gradient(to bottom, #6a0dad, #000000);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px auto;
+    width: 82%;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+}
+
+.infoDragonBall p {
+    font-family: "Texto", Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.infoDragonBall img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+.galeria {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 10px;
+    margin-left: 25px;
+}
+
+.galeria img {
+    flex-shrink: 0;
+    max-width: 300px;
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.presentacion p {
+    flex: 1;
+    text-align: left;
+}
+
+.Gohan-GIF img {
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.temporadas-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.temporada {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #1a1a50, #6666ff, #d9d9ff);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+    width: 100%;
+    max-width: 900px;
+}
+
+.temporada img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.temporada h3 {
+    font-family: "Titulo";
+    color: #ff8c00;
+    -webkit-text-stroke: 1px #000;
+    font-size: 80px;
+    margin-top: 0px;
+}
+
+.temporada p {
+    font-family: "Texto", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#personajes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.personaje {
+    background: #000;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.personaje img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.volver-inicio {
+    font-family: 'Texto';
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.volver-inicio:hover {
+    background-color: #ffb84d;
+    transform: scale(1.1);
+}
+
+.personajes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.personaje {
+    width: 80%; 
+    margin: 10px; 
+    text-align: center; 
+    padding: 10px;
+    background-color: #f3f3f3; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.imagen-personaje {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.personaje h3 {
+    font-family: 'Texto';
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.personaje p {
+    font-family: 'Texto';
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.personaje:hover .imagen-personaje {
+    transform: scale(1.1); 
+}
+
+@media (max-width: 768px) {
+    .personajes-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .personajes-container {
+        grid-template-columns: 1fr; 
+    }
+}
+
